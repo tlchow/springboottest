@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+    <Appenders>
+        <File name="FileAppender" fileName="./log/logFile.log" append="true">
+            <PatternLayout pattern="%d %-5p %c:%L [%t] - %m%n" />
+        </File>
+
+        <Console name="STDOUT" target="SYSTEM_OUT">
+             <PatternLayout pattern="%d [%X{X-B3-TraceId},%X{X-B3-SpanId},%X{X-B3-ParentSpanId},%X{X-Span-Export}] %-5p %c:%L [%t] - %m%n" />
+        </Console>
+
+        <RollingFile name="RollingFileInfo" fileName="./log/bee-client.log"
+                     filePattern="./log/bee-client-gz/$${date:yyyy-MM}/bee-client-%d{yyyy-MM-dd}-%i.log.gz">
+            <Filters>
+                <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>
+            <PatternLayout pattern="%d %-5p %c:%L [%t] - %m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="200 M"/>
+            </Policies>
+        </RollingFile>
+
+    </Appenders>
+
+
+    <Loggers>
+        <Logger name="com.opensymphony.xwork2.ognl.OgnlValueStack" level="ERROR" />
+        <Logger name="open.template" level="DEBUG" />
+        <Logger name="org.springframework.cloud.netflix" level="DEBUG" />
+        <Logger name="com.alisoft.xplatform.asf" level="WARN" />
+        <Logger name="com.mbi" level="ERROR" />
+        <Logger name="net.mlw" level="INFO" />
+        <Logger name="java.sql" level="INFO" />
+        <Logger name="org.hibernate.type" level="ERROR" />
+        <Logger name="com.opensymphony.webwork" level="ERROR" />
+        <Logger name="org.apache" level="INFO" />
+        <Logger name="org.jgroups" level="WARN" />
+        <Logger name="org.jboss.axis" level="INFO" />
+        <Logger name="org.jboss.management" level="INFO" />
+        <Logger name="org.apache.commons.httpclient" level="ERROR" />
+        <Logger name="com.alibaba.dubbo" level="WARN" />
+        <Logger name="com.mchange.v2.resourcepool" level="ERROR" />
+        <Logger name="org.mybatis.spring" level="ERROR" />
+        <Logger name="org.apache.ibatis" level="ERROR" />
+
+        <Root level="INFO">
+            <AppenderRef ref="STDOUT" />
+            <!--<AppenderRef ref="FileAppender" />-->
+            <!--<AppenderRef ref="RollingFileInfo" />-->
+        </Root>
+
+    </Loggers>
+</Configuration>
