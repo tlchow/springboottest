@@ -75,7 +75,7 @@ public class LoggingAspect {
 	 * @return
 	 * @throws Throwable
 	 */
-	@Around("execution(* com.in28minutes.springboot.rest.example.student.StudentResource.*(..))")
+	@Around("execution(* com.in28minutes.springboot.rest.example.student.StudentController.*(..))")
 	public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable {
 		long startTime = System.currentTimeMillis();
 		try {

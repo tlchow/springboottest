@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 @RestController
-public class StudentResource {
+public class StudentController {
 
 	@Autowired
 	private StudentRepository studentRepository;
@@ -35,7 +35,7 @@ public class StudentResource {
 //			e.printStackTrace();
 //			throw new RuntimeException("Test");
 //		}
-		
+		System.out.println("retrieveStudent");
 		Optional<Student> student = studentRepository.findById(Long.parseLong(id.getId()));
 
 		if (!student.isPresent())

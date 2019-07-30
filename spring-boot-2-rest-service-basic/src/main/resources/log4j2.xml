@@ -44,8 +44,9 @@
         <Logger name="com.mchange.v2.resourcepool" level="ERROR" />
         <Logger name="org.mybatis.spring" level="ERROR" />
         <Logger name="org.apache.ibatis" level="ERROR" />
+        <Logger name="com.netflix" level="DEBUG" />
 
-        <Root level="INFO">
+        <Root level="DEBUG">
             <AppenderRef ref="STDOUT" />
             <!--<AppenderRef ref="FileAppender" />-->
             <!--<AppenderRef ref="RollingFileInfo" />-->
