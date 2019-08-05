@@ -46,7 +46,7 @@
         <Logger name="org.apache.ibatis" level="ERROR" />
         <Logger name="com.netflix" level="DEBUG" />
 
-        <Root level="DEBUG">
+        <Root level="INFO">
             <AppenderRef ref="STDOUT" />
             <!--<AppenderRef ref="FileAppender" />-->
             <!--<AppenderRef ref="RollingFileInfo" />-->

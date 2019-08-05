@@ -10,11 +10,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.in28minutes.springboot.rest.example.RibbonConfiguration;
 
-//@FeignClient(name = "studentClient", fallback=StudentClientFallback.class, url="${feign.client.studentClient.url}")
+@FeignClient(name = "studentClient", fallback=StudentClientFallback.class, url="${feign.client.studentClient.url}")
+@FeignClientLog
 //@FeignClient(name = "studentClient", fallback=StudentClientFallback.class)
-@FeignClient(name = "studentClient")
-@RibbonClient(name = "studentClient", configuration= RibbonConfiguration.class)
-public interface StudentClient {
+//@FeignClient(name = "studentClient")
+//@RibbonClient(name = "studentClient", configuration= RibbonConfiguration.class)
+public interface StudentFeignClient {
 	@RequestMapping(method = RequestMethod.GET, value = "/students")
 	public List<Student> retrieveAllStudents();
 }

@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 
 @Component
-public class StudentClientFallback implements StudentClient {
+public class StudentClientFallback implements StudentFeignClient {
 
 	@Override
 	public List<Student> retrieveAllStudents() {

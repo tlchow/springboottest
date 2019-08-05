@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class TeacherController {
 	
 	@Autowired
-	private StudentClient studentClient;
+	private StudentFeignClient studentClient;
 
 	@GetMapping("/teacher/students")
 	public List<Student> retrieveAllStudentsForThisTecher() {
-		System.out.println("retrieveAllStudentsForThisTecher");
-		return studentClient.retrieveAllStudents();
+		List<Student> students = studentClient.retrieveAllStudents();
+		return students;
 	}
 }

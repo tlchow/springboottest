@@ -9,7 +9,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @SpringBootApplication
 @EnableFeignClients
-@EnableCircuitBreaker
+//@EnableCircuitBreaker
 //@EnableTurbine
 //@EnableHystrixDashboard
 public class SpringBoot2RestServiceApplication {
